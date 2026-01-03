@@ -1,0 +1,79 @@
+/* Custom styles for mobile sidebar */
+@media (max-width: 1024px) {
+    .pc-sidebar {
+        transform: translateX(-280px);
+        transition: transform 0.3s ease;
+    }
+
+    .pc-sidebar.mob-sidebar-active {
+        transform: translateX(0);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Overlay when sidebar is active on mobile */
+    .pc-sidebar.mob-sidebar-active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+}
+
+/* Sidebar scrolling fix */
+.pc-sidebar .navbar-content {
+    max-height: calc(100vh - 70px);
+    /* Full height minus header */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Custom scrollbar for sidebar */
+.pc-sidebar .navbar-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.pc-sidebar .navbar-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.pc-sidebar .navbar-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.pc-sidebar .navbar-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Show mobile hamburger on small screens, hide desktop toggle */
+@media (max-width: 1024px) {
+    .pc-h-item.pc-sidebar-popup {
+        display: block !important;
+    }
+
+    .pc-h-item.pc-sidebar-collapse {
+        display: none !important;
+    }
+}
+
+/* Show desktop toggle on large screens, hide mobile hamburger */
+@media (min-width: 1025px) {
+    .pc-h-item.pc-sidebar-popup {
+        display: none !important;
+    }
+
+    .pc-h-item.pc-sidebar-collapse {
+        display: block !important;
+    }
+}
+
+/* Clickable area improvements */
+.pc-link {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}

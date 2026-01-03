@@ -1,0 +1,233 @@
+/* Theme Dynamic CSS - Auto Generated */
+/* Do not edit manually - Use Theme Settings in Admin Panel */
+
+:root {
+    --navbar-color: #78d286;
+    --navbar-rgb: 120, 210, 134;
+    --slider-overlay-color: #056113;
+    --slider-overlay-rgb: 5, 97, 19;
+    --footer-color: #056113;
+    --button-color: #1ecc21;
+    --link-hover-color: #f8fbfc;
+    --heading-color: #2a8448;
+}
+
+/* Hero Slider Semi-Transparent Overlay */
+.untree_co-hero.overlay::before {
+    background-color: rgba(var(--slider-overlay-rgb), 0.6) !important;
+}
+
+.untree_co-hero .overlay::before {
+    background-color: rgba(var(--slider-overlay-rgb), 0.6) !important;
+}
+
+/* Call to Action Section Overlay */
+.untree_co-section.overlay::before {
+    background-color: rgba(var(--slider-overlay-rgb), 0.6) !important;
+}
+
+.untree_co-section.bg-img.overlay::before {
+    background-color: rgba(var(--slider-overlay-rgb), 0.6) !important;
+}
+
+/* Navigation Bar - Transparent to blend with Slider */
+.site-nav {
+    background-color: transparent !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+nav.site-nav .top-bar,
+nav.site-nav .pb-2.top-bar,
+.site-nav>.top-bar,
+.site-nav>.pb-2,
+.site-nav .container,
+.top-bar,
+.pb-2.top-bar {
+    background-color: transparent !important;
+    background: none !important;
+}
+
+/* Sticky Nav Styling - White on Scroll */
+.sticky-wrapper.is-sticky .sticky-nav,
+.sticky-wrapper.is-sticky .js-sticky-header,
+.sticky-wrapper.is-sticky .site-navbar,
+.sticky-wrapper.is-sticky .site-nav {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 15px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+.sticky-wrapper.is-sticky .site-menu>li>a {
+    color: #000000 !important;
+}
+
+.sticky-wrapper.is-sticky .site-menu>li.active>a {
+    color: var(--navbar-color) !important;
+}
+
+.sticky-wrapper.is-sticky .logo {
+    color: #000000 !important;
+}
+
+.sticky-nav {
+    background-color: transparent;
+    transition: .3s all ease;
+}
+
+/* Footer Background */
+.site-footer {
+    background-color: var(--footer-color) !important;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+    background-color: var(--button-color) !important;
+    border-color: var(--button-color) !important;
+    color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    background-color: var(--button-color) !important;
+    opacity: 0.85;
+}
+
+.btn-book {
+    background-color: var(--button-color) !important;
+    border-color: var(--button-color) !important;
+}
+
+/* Links and Hover States */
+a:hover {
+    color: var(--link-hover-color) !important;
+}
+
+.site-menu>li.active>a {
+    color: var(--link-hover-color) !important;
+}
+
+.line-bottom::after {
+    background-color: var(--link-hover-color) !important;
+}
+
+.service-number {
+    color: var(--link-hover-color) !important;
+}
+
+/* Text Visibility Enhancements - Bold Fonts */
+.top-bar,
+.top-bar a,
+.top-bar span {
+    font-weight: 700 !important;
+}
+
+.site-menu>li>a {
+    font-weight: 700 !important;
+}
+
+.logo {
+    font-weight: 800 !important;
+}
+
+.untree_co-hero .caption {
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+
+.untree_co-hero .heading {
+    font-weight: 800 !important;
+    color: #ffffff !important;
+}
+
+.untree_co-hero .desc {
+    font-weight: 600 !important;
+    color: #ffffff !important;
+}
+
+.untree_co-hero .desc p {
+    font-weight: 600 !important;
+    color: #ffffff !important;
+}
+
+/* Homepage H2 Headings */
+h2 {
+    color: var(--heading-color) !important;
+}
+
+.line-bottom {
+    color: var(--heading-color) !important;
+}
+
+h2 a,
+h2 a:hover {
+    color: var(--heading-color) !important;
+    text-decoration: none;
+}
+
+/* Feature Icons - Match H2 Heading Color */
+.feature [class^="flaticon-"],
+.feature [class^="icon-"],
+.feature [class^="uil uil-"] {
+    color: var(--heading-color) !important;
+}
+
+.feature [class^="flaticon-"]:after,
+.feature [class^="icon-"]:after,
+.feature [class^="uil uil-"]:after {
+    border-color: var(--heading-color) !important;
+    opacity: 0.2;
+}
+
+/* News Section Specific */
+.media-h-body h2 {
+    color: var(--heading-color) !important;
+}
+
+.media-h-body h2 a {
+    color: var(--heading-color) !important;
+}
+
+.media-h-body h2 a:hover {
+    color: var(--heading-color) !important;
+    text-decoration: none;
+}
+
+
+/* H3 Headings - Staff Names, Alumni Names */
+h3 {
+    color: var(--heading-color) !important;
+}
+
+.staff-name {
+    color: var(--heading-color) !important;
+}
+
+.author h3 {
+    color: var(--heading-color) !important;
+}
+
+.block-testimonial .author h3 {
+    color: var(--heading-color) !important;
+}
+
+/* Read More Links */
+.media-h-body a {
+    color: var(--heading-color) !important;
+}
+
+.media-h-body a:hover {
+    color: var(--heading-color) !important;
+    opacity: 0.8;
+}
+
+/* Footer Headings - Keep White */
+.site-footer h2,
+.site-footer h3 {
+    color: #ffffff !important;
+}
+
+.site-footer .widget h3 {
+    color: #ffffff !important;
+}
