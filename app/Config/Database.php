@@ -217,6 +217,10 @@ class Database extends Config
         }
         if ($driver = getenv('database_default_DBDriver')) {
             $this->default['DBDriver'] = $driver;
+            if (stripos($driver, 'postgre') !== false) {
+                $this->default['charset'] = 'utf8';
+                $this->default['DBCollat'] = 'utf8_general_ci';
+            }
         }
         if ($port = getenv('database_default_port')) {
             $this->default['port'] = (int) $port;
