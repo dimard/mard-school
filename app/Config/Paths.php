@@ -81,6 +81,15 @@ class Paths
         // Vercel read-only filesystem workaround
         if (getenv('VERCEL')) {
             $this->writableDirectory = '/tmp';
+
+            // Auto-create temp directories required by CI4
+            $dirs = ['cache', 'logs', 'session', 'uploads', 'debugbar'];
+            foreach ($dirs as $dir) {
+                $path = '/tmp/' . $dir;
+                if (!is_dir($path)) {
+                    @mkdir($path, 0777, true);
+                }
+            }
         }
     }
 }
