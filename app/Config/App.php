@@ -199,4 +199,13 @@ class App extends BaseConfig
      * @see http://www.w3.org/TR/CSP/
      */
     public bool $CSPEnabled = false;
+    public function __construct()
+    {
+        parent::__construct();
+
+        // Support app_baseURL for Vercel
+        if ($baseUrl = getenv('app_baseURL')) {
+            $this->baseURL = $baseUrl;
+        }
+    }
 }
