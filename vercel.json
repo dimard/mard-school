@@ -7,6 +7,11 @@
     "routes": [
         {
             "src": "/(.*)",
+            "dest": "/public/$1",
+            "check": true
+        },
+        {
+            "src": "/(.*)",
             "dest": "/api/index.php"
         }
     ]
