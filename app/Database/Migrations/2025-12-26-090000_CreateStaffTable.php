@@ -69,7 +69,7 @@ class CreateStaffTable extends Migration
 
         $this->forge->addKey('id', true);
         $this->forge->addKey(['is_active', 'sort_order']);
-        $this->forge->createTable('staff');
+        $this->forge->createTable('staff', true);
     }
 
     public function down()
