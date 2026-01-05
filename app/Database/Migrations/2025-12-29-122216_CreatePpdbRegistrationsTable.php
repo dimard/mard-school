@@ -119,7 +119,7 @@ class CreatePpdbRegistrationsTable extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addKey('registration_number');
         $this->forge->addKey('status');
-        $this->forge->createTable('ppdb_registrations');
+        $this->forge->createTable('ppdb_registrations', true);
     }
 
     public function down()
