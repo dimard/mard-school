@@ -206,9 +206,10 @@ class App extends BaseConfig
         parent::__construct();
 
         // Support app_baseURL for Vercel
-        if ($baseUrl = getenv('app_baseURL')) {
-            $this->baseURL = $baseUrl;
-        } elseif (getenv('VERCEL_URL')) {
+        // if ($baseUrl = getenv('app_baseURL')) {
+        //     $this->baseURL = $baseUrl;
+        // } else
+        if (getenv('VERCEL_URL')) {
             $this->baseURL = 'https://' . getenv('VERCEL_URL') . '/';
         }
     }
