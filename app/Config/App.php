@@ -40,7 +40,7 @@ class App extends BaseConfig
      * something else. If you have configured your web server to remove this file
      * from your site URIs, set this variable to an empty string.
      */
-    public string $indexPage = 'index.php';
+    public string $indexPage = '';
 
     /**
      * --------------------------------------------------------------------------
@@ -79,6 +79,7 @@ class App extends BaseConfig
     | and it will be used as: '/\A[<permittedURIChars>]+\z/iu'
     |
     | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
+    |
     |
     */
     public string $permittedURIChars = 'a-z 0-9~%.:_\-';
@@ -199,6 +200,7 @@ class App extends BaseConfig
      * @see http://www.w3.org/TR/CSP/
      */
     public bool $CSPEnabled = false;
+
     public function __construct()
     {
         parent::__construct();
@@ -206,6 +208,8 @@ class App extends BaseConfig
         // Support app_baseURL for Vercel
         if ($baseUrl = getenv('app_baseURL')) {
             $this->baseURL = $baseUrl;
+        } elseif (getenv('VERCEL_URL')) {
+            $this->baseURL = 'https://' . getenv('VERCEL_URL') . '/';
         }
     }
 }
