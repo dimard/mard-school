@@ -1,64 +1,11 @@
-# 🎓 Sistem Informasi Sekolah - CodeIgniter 4
+# 🎓 Mard School - CodeIgniter 4
+
+Oleh : Dimard Nugroho 
+www.dimardnugroho.web.id
+instagram : @dimardnugroho
 
 Aplikasi web berbasis CodeIgniter 4 untuk manajemen sekolah dengan fitur CBT (Computer Based Test), Presensi Online, dan Manajemen Materi Pembelajaran.
 
----
-
-## ⚡ Quick Start
-
-### 1. Persiapan Database
-1. Buka **phpMyAdmin**: `http://localhost/phpmyadmin`
-2. Buat database baru: `school_system`
-3. Import file: [`database_schema.sql`](file:///Applications/XAMPP/xamppfiles/htdocs/codeigniter/database_schema.sql)
-
-### 2. Konfigurasi Environment
-```bash
-# Copy file environment
-cp env .env
-
-# Generate encryption key
-php spark key:generate --show
-```
-
-Edit file `.env` dan sesuaikan:t
-```ini
-CI_ENVIRONMENT = development
-app.baseURL = 'http://localhost/codeigniter/public/'
-
-database.default.hostname = localhost
-database.default.database = school_system
-database.default.username = root
-database.default.password = 
-database.default.DBDriver = MySQLi
-
-encryption.key = base64:YOUR_KEY_HERE
-```
-
-### 3. Jalankan Aplikasi
-
-**Metode 1: Menggunakan script otomatis**
-```bash
-./jalankan.sh
-```
-
-**Metode 2: Manual**
-```bash
-php spark serve
-```
-
-Aplikasi akan berjalan di: **http://localhost:8080**
-
----
-
-## 🔐 Login Credentials
-
-| Role | Email | Password |
-|------|-------|----------|
-| **Admin** | admin@sekolah.com | password |
-| **Siswa 1** | siswa001@sekolah.com | password |
-| **Siswa 2** | siswa002@sekolah.com | password |
-
----
 
 ## 📁 Struktur Proyek
 
