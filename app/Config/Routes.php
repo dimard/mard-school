@@ -193,6 +193,7 @@ $routes->group('admin', ['filter' => 'auth:admin'], function ($routes) {
 
     // Database Tools (Temporary)
     $routes->get('db/migrate', 'Admin\DatabaseTool::migrate');
+    $routes->get('db/fix', 'Admin\DatabaseTool::fix_schema');
 });
 
 // ============================================
