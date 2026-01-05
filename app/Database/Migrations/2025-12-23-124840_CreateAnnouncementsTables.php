@@ -45,7 +45,7 @@ class CreateAnnouncementsTables extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addKey('class_id');
         $this->forge->addKey('user_id');
-        $this->forge->createTable('class_announcements');
+        $this->forge->createTable('class_announcements', true);
 
         // Table: announcement_comments
         $this->forge->addField([
@@ -76,7 +76,7 @@ class CreateAnnouncementsTables extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addKey('announcement_id');
         $this->forge->addKey('user_id');
-        $this->forge->createTable('announcement_comments');
+        $this->forge->createTable('announcement_comments', true);
     }
 
     public function down()

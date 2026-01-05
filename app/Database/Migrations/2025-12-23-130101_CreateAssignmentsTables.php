@@ -52,7 +52,7 @@ class CreateAssignmentsTables extends Migration
         ]);
         $this->forge->addKey('id', true);
         $this->forge->addKey('class_id');
-        $this->forge->createTable('class_assignments');
+        $this->forge->createTable('class_assignments', true);
 
         // Table: assignment_submissions
         $this->forge->addField([
@@ -101,7 +101,7 @@ class CreateAssignmentsTables extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addKey('assignment_id');
         $this->forge->addKey('user_id');
-        $this->forge->createTable('assignment_submissions');
+        $this->forge->createTable('assignment_submissions', true);
     }
 
     public function down()

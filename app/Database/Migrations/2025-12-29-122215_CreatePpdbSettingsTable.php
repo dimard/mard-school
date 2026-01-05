@@ -35,7 +35,7 @@ class CreatePpdbSettingsTable extends Migration
         ]);
 
         $this->forge->addKey('id', true);
-        $this->forge->createTable('ppdb_settings');
+        $this->forge->createTable('ppdb_settings', true);
 
         // Insert default settings
         $data = [
