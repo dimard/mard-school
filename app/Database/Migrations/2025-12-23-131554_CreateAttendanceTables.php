@@ -79,8 +79,8 @@ class CreateAttendanceTables extends Migration
                 'type' => 'DATETIME',
             ],
             'status' => [
-                'type' => 'ENUM',
-                'constraint' => ['present', 'late'],
+                'type' => 'VARCHAR',
+                'constraint' => 20,
                 'default' => 'present',
             ],
         ]);

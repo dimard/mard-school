@@ -36,8 +36,8 @@ class CreatePpdbRegistrationsTable extends Migration
                 'type' => 'DATE',
             ],
             'gender' => [
-                'type' => 'ENUM',
-                'constraint' => ['L', 'P'],
+                'type' => 'VARCHAR',
+                'constraint' => 10,
             ],
             'email' => [
                 'type' => 'VARCHAR',
@@ -88,8 +88,8 @@ class CreatePpdbRegistrationsTable extends Migration
                 'null' => true,
             ],
             'status' => [
-                'type' => 'ENUM',
-                'constraint' => ['pending', 'verified', 'approved', 'rejected'],
+                'type' => 'VARCHAR',
+                'constraint' => 20,
                 'default' => 'pending',
             ],
             'admin_notes' => [
