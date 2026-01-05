@@ -92,8 +92,8 @@ class AttendanceModel extends Model
         $year = $year ?? date('Y');
 
         $builder = $this->where('user_id', $userId)
-            ->where('MONTH(attendance_date)', $month)
-            ->where('YEAR(attendance_date)', $year);
+            ->where("EXTRACT(MONTH FROM attendance_date)", $month)
+            ->where("EXTRACT(YEAR FROM attendance_date)", $year);
 
         $total = $builder->countAllResults(false);
         $hadir = $builder->where('status', 'hadir')->countAllResults(false);
