@@ -64,8 +64,10 @@ class Sliders extends BaseController
         $newName = null;
 
         if ($image && $image->isValid() && !$image->hasMoved()) {
-            $newName = $image->getRandomName();
-            $image->move(FCPATH . 'uploads/sliders', $newName);
+            // Vercel handling: Convert to Base64
+            $type = $image->getClientMimeType();
+            $data = file_get_contents($image->getTempName());
+            $newName = 'data:' . $type . ';base64,' . base64_encode($data);
         }
 
         $data = [
@@ -141,15 +143,10 @@ class Sliders extends BaseController
         // Handle image upload if new image provided
         $image = $this->request->getFile('slider_image');
         if ($image && $image->isValid() && !$image->hasMoved()) {
-            // Delete old image
-            if ($slider['image_url'] && file_exists(FCPATH . 'uploads/sliders/' . $slider['image_url'])) {
-                unlink(FCPATH . 'uploads/sliders/' . $slider['image_url']);
-            }
-
-            // Upload new image
-            $newName = $image->getRandomName();
-            $image->move(FCPATH . 'uploads/sliders', $newName);
-            $data['image_url'] = $newName;
+            // Vercel handling: Convert to Base64
+            $type = $image->getClientMimeType();
+            $fileData = file_get_contents($image->getTempName());
+            $data['image_url'] = 'data:' . $type . ';base64,' . base64_encode($fileData);
         }
 
         if ($this->sliderModel->update($id, $data)) {
@@ -171,9 +168,10 @@ class Sliders extends BaseController
         }
 
         // Delete image file
-        if ($slider['image_url'] && file_exists(FCPATH . 'uploads/sliders/' . $slider['image_url'])) {
-            unlink(FCPATH . 'uploads/sliders/' . $slider['image_url']);
-        }
+        // Delete image file (Skipped: Using Base64 in DB)
+        // if ($slider['image_url'] && file_exists(FCPATH . 'uploads/sliders/' . $slider['image_url'])) {
+        //     unlink(FCPATH . 'uploads/sliders/' . $slider['image_url']);
+        // }
 
         if ($this->sliderModel->delete($id)) {
             return redirect()->to('admin/sliders')->with('message', 'Slider deleted successfully');
