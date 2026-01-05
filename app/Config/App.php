@@ -208,7 +208,11 @@ class App extends BaseConfig
         // Support app_baseURL for Vercel
         // Auto-detect base URL from request headers
         if (isset($_SERVER['HTTP_HOST'])) {
-            $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? 'https' : 'http';
+            // Check for HTTPS via standard header OR load balancer header (Vercel)
+            $isHttps = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+                || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+
+            $protocol = $isHttps ? 'https' : 'http';
             $this->baseURL = $protocol . '://' . $_SERVER['HTTP_HOST'] . '/';
         }
     }
