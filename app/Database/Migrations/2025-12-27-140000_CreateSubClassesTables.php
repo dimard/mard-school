@@ -51,7 +51,7 @@ class CreateSubClassesTables extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addKey('class_id');
         $this->forge->addKey('teacher_id');
-        $this->forge->createTable('sub_classes');
+        $this->forge->createTable('sub_classes', true);
 
         // Table: sub_class_members
         $this->forge->addField([
@@ -79,7 +79,7 @@ class CreateSubClassesTables extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addKey('sub_class_id');
         $this->forge->addKey('student_id');
-        $this->forge->createTable('sub_class_members');
+        $this->forge->createTable('sub_class_members', true);
     }
 
     public function down()

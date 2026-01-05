@@ -61,7 +61,7 @@ class CreateEReportTables extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addKey('student_id');
         $this->forge->addKey('class_id');
-        $this->forge->createTable('student_conducts');
+        $this->forge->createTable('student_conducts', true);
 
         // Table: report_settings
         $this->forge->addField([
@@ -94,7 +94,7 @@ class CreateEReportTables extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('report_settings');
+        $this->forge->createTable('report_settings', true);
 
         // Seed default settings
         $db = \Config\Database::connect();
