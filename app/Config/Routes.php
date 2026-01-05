@@ -190,6 +190,9 @@ $routes->group('admin', ['filter' => 'auth:admin'], function ($routes) {
     $routes->get('ppdb/settings', 'Admin\\PPDB::settings');
     $routes->post('ppdb/settings/update', 'Admin\\PPDB::updateSettings');
     $routes->get('ppdb/export', 'Admin\\PPDB::export');
+
+    // Database Tools (Temporary)
+    $routes->get('db/migrate', 'Admin\DatabaseTool::migrate');
 });
 
 // ============================================
